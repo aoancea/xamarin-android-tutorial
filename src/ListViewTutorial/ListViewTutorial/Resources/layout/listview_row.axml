@@ -14,7 +14,7 @@
       android:layout_width="match_parent"
       android:layout_weight="25"
       android:layout_height="wrap_content"
-      android:id="@+id/txtName" />
+      android:id="@+id/txtFirstName" />
   <TextView
       android:text="Last Name"
       android:layout_width="match_parent"

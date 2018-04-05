@@ -29,8 +29,8 @@ namespace ListViewTutorial
                 row = LayoutInflater.From(context).Inflate(Resource.Layout.listview_row, null, false);
             }
 
-            TextView txtName = row.FindViewById<TextView>(Resource.Id.txtName);
-            txtName.Text = mItems[position].Name;
+            TextView txtFirstName = row.FindViewById<TextView>(Resource.Id.txtFirstName);
+            txtFirstName.Text = mItems[position].FirstName;
 
             TextView txtLastName = row.FindViewById<TextView>(Resource.Id.txtLastName);
             txtLastName.Text = mItems[position].LastName;

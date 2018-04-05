@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Widget;
+using System;
 using System.Collections.Generic;
 
 namespace ListViewTutorial
@@ -23,14 +24,27 @@ namespace ListViewTutorial
 
             mItems = new List<Person>()
             {
-                new Person { Name = "John", LastName = "Smith", Age = "22", Gender = "male" },
-                new Person { Name = "Tom", LastName = "Tom", Age = "35", Gender = "male" },
-                new Person { Name = "Sally", LastName = "Susan", Age = "88", Gender = "female" },
+                new Person { FirstName = "John", LastName = "Smith", Age = "22", Gender = "male" },
+                new Person { FirstName = "Tom", LastName = "Tom", Age = "35", Gender = "male" },
+                new Person { FirstName = "Sally", LastName = "Susan", Age = "88", Gender = "female" },
             };
 
             MyListViewAdapter adapter = new MyListViewAdapter(this, mItems);
 
             mListView.Adapter = adapter;
+
+            mListView.ItemClick += MListView_ItemClick;
+            mListView.ItemLongClick += MListView_ItemLongClick;
+        }
+
+        private void MListView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+        {
+            Console.WriteLine(mItems[e.Position].LastName);
+        }
+
+        private void MListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Console.WriteLine(mItems[e.Position].FirstName);
         }
     }
 }
